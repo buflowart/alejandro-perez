@@ -1,0 +1,13 @@
+# solo se publica lo que usa index.html
+/*
+!/index.html
+!/.gitignore
+!/files/
+!/imagenes/
+/imagenes/*
+!/imagenes/v2/
+!/imagenes/web/
+/imagenes/web/*
+!/imagenes/web/3679-15.jpg
+!/imagenes/web/3679-26.jpg
+!/imagenes/web/3679-35.jpg
