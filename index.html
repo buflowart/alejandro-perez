@@ -95,6 +95,14 @@ footer .links a { color:var(--soft); text-decoration:none; letter-spacing:.08em;
 footer .links a:hover { color:var(--ink); }
 footer .copy { margin-top:70px; color:#7d8fa3; font-size:14px; }
 
+/* fotos a sangre con parallax */
+html, body { overflow-x:clip; }
+.band { position:relative; width:100vw; margin:90px 0 0 calc(50% - 50vw); height:clamp(340px, 82vh, 860px); overflow:hidden; background:#03070d; }
+.band img { position:absolute; left:0; top:-12%; width:100%; height:124%; object-fit:cover; will-change:transform; cursor:zoom-in; }
+.band::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(3,7,13,.75) 0%, rgba(3,7,13,0) 38%); pointer-events:none; }
+.band figcaption { position:absolute; left:max(32px, calc((100vw - 1180px)/2 + 32px)); bottom:26px; z-index:1; font-size:14px; color:#cfd8e3; letter-spacing:.04em; }
+.band figcaption b { display:block; font-family:var(--display); font-size:clamp(24px, 3.4vw, 40px); color:var(--ink); letter-spacing:-.01em; margin-bottom:4px; }
+
 /* aparición */
 .rev { opacity:0; transform:translateY(24px); transition:opacity .8s, transform .8s; }
 .rev.in { opacity:1; transform:none; }
@@ -127,6 +135,8 @@ footer .copy { margin-top:70px; color:#7d8fa3; font-size:14px; }
   .facts b { width:96px; }
   .bio img { max-width:420px; }
   footer .mail { font-size:clamp(17px, 5.4vw, 24px); overflow-wrap:anywhere; }
+  .band { height:62vh; margin-top:60px; }
+  .band figcaption { left:16px; right:16px; }
 }
 </style>
 </head>
@@ -175,19 +185,21 @@ footer .copy { margin-top:70px; color:#7d8fa3; font-size:14px; }
       <p>I work in ensemble shows and as a soloist, in character and in costume, on large stages and in close contact with the public.</p>
     </div>
     <ul class="facts">
-      <li><b>Disciplines</b><span>Hoops, diabolo, contact juggling, poi, buugeng, cube manipulation, clown and character work</span></li>
+      <li><b>Disciplines</b><span>Juggling rings, diabolo, contact juggling, poi, buugeng, cube manipulation, clown and character work</span></li>
       <li><b>Experience</b><span>15+ years in circus · 7 seasons in Italy · 5 at Leolandia</span></li>
       <li><b>Languages</b><span>Spanish (native), Italian (fluent), English (conversational)</span></li>
-      <li><b>Also</b><span>My own LED props for night shows and events</span></li>
+      <li><b>Also</b><span>LED props designed and built by me, for night shows and events</span></li>
     </ul>
   </div>
 
+  <figure class="band"><img src="imagenes/v2/finale.jpg" alt="Finale of the main show with the whole cast and sparklers" loading="lazy" style="object-position:50% 45%"><figcaption><b>Ten months a year on stage</b>Main show finale, Leolandia 2025. Photo: Pedon Trocie.</figcaption></figure>
+
   <h3 class="sub rev">What I bring to a show</h3>
   <div class="acts rev">
-    <figure><img src="imagenes/v2/show_rings.jpg" alt="Hoops duo on stage" loading="lazy" style="object-position:40% 55%"><figcaption><b>Hoops</b>Hoop manipulation, solo or in duo.</figcaption></figure>
+    <figure><img src="imagenes/v2/show_rings.jpg" alt="Rings duo on stage" loading="lazy" style="object-position:40% 55%"><figcaption><b>Rings</b>Ring juggling, solo or in duo.</figcaption></figure>
     <figure><img src="imagenes/v2/xmas_diabolo_b.jpg" alt="Diabolo in a Christmas show" loading="lazy" style="object-position:40% 40%"><figcaption><b>Diabolo</b>In character, for themed and seasonal shows.</figcaption></figure>
     <figure><img src="imagenes/v2/show_ball.jpg" alt="Contact juggling with a crystal ball" loading="lazy" style="object-position:50% 55%"><figcaption><b>Contact juggling</b>Crystal ball, on stage or close to the public.</figcaption></figure>
-    <figure><img src="imagenes/v2/show_king.jpg" alt="LED buugeng on a dark stage" loading="lazy" style="object-position:50% 40%"><figcaption><b>LED buugeng and poi</b>Light numbers with props I build myself.</figcaption></figure>
+    <figure><img src="imagenes/v2/show_king.jpg" alt="LED buugeng on a dark stage" loading="lazy" style="object-position:50% 40%"><figcaption><b>LED buugeng and poi</b>Light numbers with props made by me.</figcaption></figure>
     <figure><img src="imagenes/v2/show_cube.jpg" alt="Cube manipulation in an ensemble show" loading="lazy" style="object-position:50% 35%"><figcaption><b>Cube manipulation</b>At the centre of a large ensemble show.</figcaption></figure>
     <figure><img src="imagenes/v2/show_tarot.jpg" alt="Comic character in a tarot-themed show" loading="lazy" style="object-position:50% 40%"><figcaption><b>Clown and character</b>Comic roles, storytelling and play with the audience.</figcaption></figure>
   </div>
@@ -198,12 +210,12 @@ footer .copy { margin-top:70px; color:#7d8fa3; font-size:14px; }
     <figure><img src="imagenes/v2/show_contact.jpg" alt="Contact juggling solo in green light" loading="lazy"><figcaption>Contact juggling solo, 2026. Photo: Irene Barbiero.</figcaption></figure>
     <figure><img src="imagenes/v2/witch_ball.jpg" alt="Witch character holding a crystal ball" loading="lazy"><figcaption>Halloween in the park, 2026. Photo: Irene Barbiero.</figcaption></figure>
     <figure><img src="imagenes/v2/finale.jpg" alt="Show finale with sparklers" loading="lazy"><figcaption>Finale, Leolandia 2025. Photo: Pedon Trocie.</figcaption></figure>
-    <figure><img src="imagenes/v2/rings_wide.jpg" alt="Hoops duo with a dancer" loading="lazy"><figcaption>Hoops duo, 2026. Photo: Irene Barbiero.</figcaption></figure>
+    <figure><img src="imagenes/v2/rings_wide.jpg" alt="Rings duo with a dancer" loading="lazy"><figcaption>Rings duo, 2026. Photo: Irene Barbiero.</figcaption></figure>
     <figure><img src="imagenes/v2/xmas_diabolo.jpg" alt="Diabolo as a toy soldier" loading="lazy"><figcaption>Christmas show, Leolandia.</figcaption></figure>
     <figure><img src="imagenes/v2/buugeng_dark.jpg" alt="LED buugeng in the dark" loading="lazy"><figcaption>LED buugeng, 2026.</figcaption></figure>
     <figure><img src="imagenes/v2/cast.jpg" alt="With the cast" loading="lazy"><figcaption>With the cast, 2026. Photo: Irene Barbiero.</figcaption></figure>
     <figure><img src="imagenes/v2/show_parade.jpg" alt="Parade in the park with the public" loading="lazy"><figcaption>Halloween parade, 2026.</figcaption></figure>
-    <figure><img src="imagenes/v2/xmas_hoop.jpg" alt="Hoop in the Christmas show" loading="lazy"><figcaption>Christmas show, Leolandia.</figcaption></figure>
+    <figure><img src="imagenes/v2/xmas_hoop.jpg" alt="Rings in the Christmas show" loading="lazy"><figcaption>Christmas show, Leolandia.</figcaption></figure>
     <figure><img src="imagenes/v2/tarot_b.jpg" alt="Character behind giant tarot cards" loading="lazy"><figcaption>Tarot show, 2026. Photo: Pedon Trocie.</figcaption></figure>
     <figure><img src="imagenes/v2/lightning.jpg" alt="Stage with lightning effects" loading="lazy"><figcaption>Main show, Leolandia 2025. Photo: Pedon Trocie.</figcaption></figure>
   </div>
@@ -223,6 +235,8 @@ footer .copy { margin-top:70px; color:#7d8fa3; font-size:14px; }
   </ul>
 </section>
 
+<figure class="band" style="margin-left:0;width:100%"><img src="imagenes/v2/blue_stage.jpg" alt="A lone figure in light on a dark blue stage" loading="lazy" style="object-position:50% 55%"><figcaption><b>Light is my thread</b>Stage show, Leolandia 2026.</figcaption></figure>
+
 <section id="light" class="wrap">
   <div class="rev">
     <div class="kick">02 · Light &amp; technology</div>
@@ -241,6 +255,8 @@ footer .copy { margin-top:70px; color:#7d8fa3; font-size:14px; }
       <img src="imagenes/v2/pov.jpg" alt="An image drawn in the air by a spinning poi" loading="lazy">
     </div>
   </div>
+
+  <figure class="band"><img src="imagenes/v2/dscf0877.jpg" alt="Long exposure of a poi drawing a four-petal flower of light" loading="lazy" style="object-position:50% 50%"><figcaption><b>The same flower, on camera</b>Long exposure of my LED poi. Fuji X-T3, tripod.</figcaption></figure>
 
   <div class="split rev">
     <div class="trio">
@@ -411,6 +427,13 @@ footer .copy { margin-top:70px; color:#7d8fa3; font-size:14px; }
     if (still) drawStill(); else requestAnimationFrame(frame);
   })();
 
+  // parallax suave en las fotos a sangre
+  const bands = [...document.querySelectorAll('.band img')];
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const px = () => { for (const im of bands) { const r = im.parentNode.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) continue; im.style.transform = `translateY(${(r.top + r.height / 2 - innerHeight / 2) * -.12}px)`; } };
+    addEventListener('scroll', () => requestAnimationFrame(px), { passive: true }); px();
+  }
+
   // aparición al hacer scroll
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
   document.querySelectorAll('.rev').forEach(el => io.observe(el));
@@ -427,7 +450,7 @@ footer .copy { margin-top:70px; color:#7d8fa3; font-size:14px; }
 
   // lightbox
   const lb = document.getElementById('lb'), lbi = lb.querySelector('img');
-  document.querySelectorAll('.gallery img, .pair img, .trio img, .acts img').forEach(im => {
+  document.querySelectorAll('.gallery img, .pair img, .trio img, .acts img, .band img').forEach(im => {
     im.style.cursor = 'zoom-in';
     im.onclick = () => { lbi.src = im.src; lbi.alt = im.alt; lb.classList.add('on'); };
   });
