@@ -7,18 +7,15 @@
 <meta name="description" content="Alejandro Perez, Colombian circus artist based in Italy: juggling, object manipulation and LED props he builds himself.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Unbounded:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
-<script>if (/font=unbounded/.test(location.search)) document.documentElement.classList.add("f-unb");</script>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-:root { --display:"Syne", "Segoe UI", sans-serif; --bg:#0b1e34; --bg2:#071425; --ink:#ece8e1; --soft:#9fb0c2; --acc:#ef6a2e; --line:#22374f; }
+:root { --display:"Schibsted Grotesk", "Segoe UI", sans-serif; --bg:#0b1e34; --bg2:#071425; --ink:#ece8e1; --soft:#9fb0c2; --acc:#ef6a2e; --line:#22374f; }
 * { box-sizing:border-box; margin:0; padding:0; }
 html { scroll-behavior:smooth; }
-html.f-unb { --display:"Unbounded", "Segoe UI", sans-serif; }
-body { background:var(--bg); color:var(--ink); font-family:"DM Sans", "Segoe UI", system-ui, sans-serif; font-size:18px; line-height:1.6; }
+body { background:var(--bg); color:var(--ink); font-family:"Schibsted Grotesk", "Segoe UI", system-ui, sans-serif; font-size:18px; line-height:1.6; }
 img { display:block; max-width:100%; }
 a { color:inherit; }
-h1, h2, h3 { font-family:var(--display); font-weight:700; line-height:1.05; letter-spacing:-.01em; }
-html.f-unb h1, html.f-unb h2, html.f-unb h3 { font-weight:500; letter-spacing:-.02em; }
+h1, h2, h3 { font-family:var(--display); font-weight:700; line-height:1.05; letter-spacing:-.02em; }
 .kick { font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--acc); font-weight:700; margin-bottom:12px; }
 .rule { width:56px; height:3px; background:var(--acc); margin:20px 0 26px; }
 .wrap { max-width:1180px; margin:0 auto; padding:0 32px; }
@@ -66,9 +63,9 @@ h3.sub { font-size:28px; margin:84px 0 22px; }
 .acts figcaption { margin-top:10px; font-size:16px; color:var(--soft); }
 .acts figcaption b { display:block; color:var(--ink); font-size:19px; }
 
-.gallery { columns:3 300px; column-gap:12px; }
-.gallery figure { break-inside:avoid; margin-bottom:12px; position:relative; }
-.gallery img { width:100%; cursor:zoom-in; }
+.gallery { display:grid; grid-template-columns:repeat(3, 1fr); gap:28px 14px; }
+.gallery figure { position:relative; }
+.gallery img { width:100%; aspect-ratio:3/2; object-fit:cover; cursor:zoom-in; }
 .gallery figcaption { font-size:14px; color:var(--soft); padding:6px 2px 0; }
 
 .tl { list-style:none; max-width:900px; }
@@ -112,8 +109,10 @@ html, body { overflow-x:clip; }
 #lb.on { display:flex; }
 #lb img { max-width:100%; max-height:100%; object-fit:contain; }
 
+@media (max-width: 520px) { .gallery { grid-template-columns:1fr !important; } }
 @media (max-width: 860px) {
   body { font-size:17px; }
+  .gallery { grid-template-columns:repeat(2, 1fr); gap:20px 10px; }
   .wrap { padding:0 16px; }
   header { padding:14px 16px; }
   #menu { display:block; }
@@ -169,7 +168,7 @@ html, body { overflow-x:clip; }
       <a class="btn" href="files/Portfolio_Circus_Alejandro_Perez.pdf" download>Circus portfolio (PDF)</a>
     </div>
   </div>
-  <div class="tag" id="poiTag">Two poi · four-petal antispin flower<br>drawn by your scroll</div>
+  <div class="tag" id="poiTag">Two poi · four-petal antispin flower</div>
   <div class="hint" id="poiHint">Scroll</div>
  </div>
 </div>
@@ -207,13 +206,13 @@ html, body { overflow-x:clip; }
   <h3 class="sub rev">On stage</h3>
   <div class="gallery rev">
     <figure><img src="imagenes/v2/cube_wide.jpg" alt="Cube number with the ensemble" loading="lazy"><figcaption>Main show, Leolandia 2025. Photo: Pedon Trocie.</figcaption></figure>
-    <figure><img src="imagenes/v2/show_contact.jpg" alt="Contact juggling solo in green light" loading="lazy"><figcaption>Contact juggling solo, 2026. Photo: Irene Barbiero.</figcaption></figure>
-    <figure><img src="imagenes/v2/witch_ball.jpg" alt="Witch character holding a crystal ball" loading="lazy"><figcaption>Halloween in the park, 2026. Photo: Irene Barbiero.</figcaption></figure>
+    <figure><img src="imagenes/v2/show_contact.jpg" style="object-position:50% 30%" alt="Contact juggling solo in green light" loading="lazy"><figcaption>Contact juggling solo, 2026. Photo: Irene Barbiero.</figcaption></figure>
+    <figure><img src="imagenes/v2/witch_ball.jpg" style="object-position:50% 22%" alt="Witch character holding a crystal ball" loading="lazy"><figcaption>Halloween in the park, 2026. Photo: Irene Barbiero.</figcaption></figure>
     <figure><img src="imagenes/v2/finale.jpg" alt="Show finale with sparklers" loading="lazy"><figcaption>Finale, Leolandia 2025. Photo: Pedon Trocie.</figcaption></figure>
-    <figure><img src="imagenes/v2/rings_wide.jpg" alt="Rings duo with a dancer" loading="lazy"><figcaption>Rings duo, 2026. Photo: Irene Barbiero.</figcaption></figure>
+    <figure><img src="imagenes/v2/rings_wide.jpg" style="object-position:50% 35%" alt="Rings duo with a dancer" loading="lazy"><figcaption>Rings duo, 2026. Photo: Irene Barbiero.</figcaption></figure>
     <figure><img src="imagenes/v2/xmas_diabolo.jpg" alt="Diabolo as a toy soldier" loading="lazy"><figcaption>Christmas show, Leolandia.</figcaption></figure>
-    <figure><img src="imagenes/v2/buugeng_dark.jpg" alt="LED buugeng in the dark" loading="lazy"><figcaption>LED buugeng, 2026.</figcaption></figure>
-    <figure><img src="imagenes/v2/cast.jpg" alt="With the cast" loading="lazy"><figcaption>With the cast, 2026. Photo: Irene Barbiero.</figcaption></figure>
+    <figure><img src="imagenes/v2/buugeng_dark.jpg" style="object-position:50% 32%" alt="LED buugeng in the dark" loading="lazy"><figcaption>LED buugeng, 2026.</figcaption></figure>
+    <figure><img src="imagenes/v2/cast.jpg" style="object-position:50% 30%" alt="With the cast" loading="lazy"><figcaption>With the cast, 2026. Photo: Irene Barbiero.</figcaption></figure>
     <figure><img src="imagenes/v2/show_parade.jpg" alt="Parade in the park with the public" loading="lazy"><figcaption>Halloween parade, 2026.</figcaption></figure>
     <figure><img src="imagenes/v2/xmas_hoop.jpg" alt="Rings in the Christmas show" loading="lazy"><figcaption>Christmas show, Leolandia.</figcaption></figure>
     <figure><img src="imagenes/v2/tarot_b.jpg" alt="Character behind giant tarot cards" loading="lazy"><figcaption>Tarot show, 2026. Photo: Pedon Trocie.</figcaption></figure>
@@ -338,13 +337,13 @@ html, body { overflow-x:clip; }
 <div id="lb"><img alt=""></div>
 
 <script>
-  // portada: dos poi en antispin dibujan una flor de 4 pétalos; el scroll alarga la exposición
+  // portada: dos poi en antispin dibujan una flor de 4 pétalos; el scroll no la toca, solo mueve la página
   (() => {
     const cv = document.getElementById('poi'), ctx = cv.getContext('2d');
     const tr = document.createElement('canvas'), tx = tr.getContext('2d');
     const hero = document.querySelector('.hero'), tag = document.getElementById('poiTag'), hint = document.getElementById('poiHint');
     const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let W, H, dpr, cx, cy, R, r, th = 0, last = performance.now(), lastY = scrollY, prev = null, on = true;
+    let W, H, dpr, cx, cy, R, r, th = 0, last = performance.now(), prev = null, on = true;
 
     function size() {
       // en el celular la barra de direcciones cambia el alto al hacer scroll: no borrar la estela por eso
@@ -363,7 +362,6 @@ html, body { overflow-x:clip; }
       const a = t + k * Math.PI;
       return [cx + R * Math.cos(a) + r * Math.cos(-3 * a), cy + R * Math.sin(a) + r * Math.sin(-3 * a), cx + R * Math.cos(a), cy + R * Math.sin(a)];
     };
-    // la página corre normal: la exposición se alarga mientras la portada sale de pantalla
     const prog = () => Math.min(1, Math.max(0, scrollY / (hero.offsetHeight * .6)));
 
     function stroke(a, b, hue, alpha) {
@@ -375,17 +373,16 @@ html, body { overflow-x:clip; }
 
     function frame(now) {
       const dt = Math.min(.05, (now - last) / 1000); last = now;
-      const p = prog(), dy = scrollY - lastY; lastY = scrollY;
-      tag.classList.toggle('on', p > .3); hint.style.opacity = p > .04 ? 0 : 1;
+      const p = prog();
+      tag.classList.toggle('on', p < .04); hint.style.opacity = p > .04 ? 0 : 1;
       if (!on) return requestAnimationFrame(frame);
 
-      // con p=0 la estela es corta; al bajar se alarga hasta exposición completa
-      const fade = .1 * Math.pow(1 - p, 1.6);
+      const fade = .035;
       tx.globalCompositeOperation = 'destination-out';
       tx.fillStyle = `rgba(0,0,0,${fade})`; tx.fillRect(0, 0, W, H);
       tx.globalCompositeOperation = 'source-over'; tx.lineCap = 'round';
 
-      const step = dt * Math.PI * 2 * .42 + Math.abs(dy) * .004, n = 10, hue0 = now * .03;
+      const step = dt * Math.PI * 2 * .42, n = 10, hue0 = now * .03;
       const alpha = .95;
       let cur = prev || [head(th, 0), head(th, 1)];
       for (let i = 1; i <= n; i++) {
