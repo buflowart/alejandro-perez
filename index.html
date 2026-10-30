@@ -39,8 +39,6 @@ header nav a:hover { color:var(--ink); }
 .hero .t .rule { margin-left:auto; margin-right:auto; }
 .hero .t .btns { justify-content:center; }
 .hero h1 { font-size:clamp(46px, 7vw, 92px); text-transform:uppercase; line-height:.92; }
-.hero .tag { position:absolute; right:max(32px, calc((100vw - 1180px)/2 + 32px)); bottom:6vh; z-index:2; font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); opacity:0; transition:opacity .6s; text-align:right; }
-.hero .tag.on { opacity:1; }
 .hero .hint { position:absolute; left:50%; bottom:22px; transform:translateX(-50%); z-index:2; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--soft); transition:opacity .4s; }
 .hero .sub { font-size:clamp(19px, 2.2vw, 24px); color:#f2f2f2; }
 .hero .meta { color:#cfcfcf; margin-top:10px; font-size:16px; }
@@ -122,8 +120,7 @@ html, body { overflow-x:clip; }
   header nav.open { display:flex; }
   header nav a { padding:12px 0; border-bottom:1px solid var(--line); }
   .hero .stage > img { object-position:58% 40%; }
-  .hero .tag { display:none; }
-  .hero .hint { display:none; }
+    .hero .hint { display:none; }
   section { padding:80px 0 20px; }
   .lead, .split, .bio { grid-template-columns:1fr; gap:30px; }
   .split.rev .txt { order:0; }
@@ -168,7 +165,6 @@ html, body { overflow-x:clip; }
       <a class="btn" href="files/Portfolio_Circus_Alejandro_Perez.pdf" download>Circus portfolio (PDF)</a>
     </div>
   </div>
-  <div class="tag" id="poiTag">Two poi · four-petal antispin flower</div>
   <div class="hint" id="poiHint">Scroll</div>
  </div>
 </div>
@@ -195,7 +191,7 @@ html, body { overflow-x:clip; }
 
   <h3 class="sub rev">What I bring to a show</h3>
   <div class="acts rev">
-    <figure><img src="imagenes/v2/show_rings.jpg" alt="Rings duo on stage" loading="lazy" style="object-position:40% 55%"><figcaption><b>Rings</b>Ring juggling, solo or in duo.</figcaption></figure>
+    <figure><img src="imagenes/v2/show_rings.jpg" alt="Rings duo on stage" loading="lazy" style="object-position:50% 28%"><figcaption><b>Rings</b>Ring juggling, solo or in duo.</figcaption></figure>
     <figure><img src="imagenes/v2/xmas_diabolo_b.jpg" alt="Diabolo in a Christmas show" loading="lazy" style="object-position:40% 40%"><figcaption><b>Diabolo</b>In character, for themed and seasonal shows.</figcaption></figure>
     <figure><img src="imagenes/v2/show_ball.jpg" alt="Contact juggling with a crystal ball" loading="lazy" style="object-position:50% 55%"><figcaption><b>Contact juggling</b>Crystal ball, on stage or close to the public.</figcaption></figure>
     <figure><img src="imagenes/v2/show_king.jpg" alt="LED buugeng on a dark stage" loading="lazy" style="object-position:50% 40%"><figcaption><b>LED buugeng and poi</b>Light numbers with props made by me.</figcaption></figure>
@@ -341,7 +337,7 @@ html, body { overflow-x:clip; }
   (() => {
     const cv = document.getElementById('poi'), ctx = cv.getContext('2d');
     const tr = document.createElement('canvas'), tx = tr.getContext('2d');
-    const hero = document.querySelector('.hero'), tag = document.getElementById('poiTag'), hint = document.getElementById('poiHint');
+    const hero = document.querySelector('.hero'), hint = document.getElementById('poiHint');
     const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
     let W, H, dpr, cx, cy, R, r, th = 0, last = performance.now(), prev = null, on = true;
 
@@ -375,7 +371,7 @@ html, body { overflow-x:clip; }
     function frame(now) {
       const dt = Math.min(.05, (now - last) / 1000); last = now;
       const p = prog();
-      tag.classList.toggle('on', p < .04); hint.style.opacity = p > .04 ? 0 : 1;
+      hint.style.opacity = p > .04 ? 0 : 1;
       if (!on) return requestAnimationFrame(frame);
 
       const fade = .018;
@@ -417,7 +413,7 @@ html, body { overflow-x:clip; }
         stroke(a[0], b[0], i / 2, .8); stroke(a[1], b[1], i / 2 + 180, .8); a = b;
       }
       ctx.clearRect(0, 0, W, H); ctx.drawImage(tr, 0, 0, W, H);
-      tag.classList.add('on'); hint.style.opacity = 0;
+      hint.style.opacity = 0;
     }
 
     size();
